@@ -16,7 +16,7 @@ def user_info():
                             age=21)
 
 @app.route('/favorite/sports')
-def fav_spots():
+def fav_sports():
     sports = ['Football', 'Esports', 'Volleyball']
     title = 'Favorite Sports Page'
     return render_template('favorite_sports.html',
@@ -30,3 +30,16 @@ def fav_foods():
     return render_template('favorite_foods.html',
                             title=title,
                             foods=foods)
+
+@app.route('/movies')
+def fav_movies():
+    movies = [
+        "Fast and Furious", 
+        "Deadpool", 
+        "Death Race", 
+        "Jurassic World", 
+        "Transformers"]
+    title = 'Favorite Movies Page'
+    return render_template('favorite_movies.html', 
+                           title=title,
+                           movies=movies)
