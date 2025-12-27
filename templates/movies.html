@@ -1,17 +1,14 @@
-<!DOCTYPE html>
-<html lang="th">
-<head>
-    <meta charset="UTF-8">
-    <title>My Favorite Movies</title>
-</head>
-<body>
-    <h1>My Movies</h1>
-    <ul>
-        {% for movie in movies %}
-            <li>{{ movie }}</li>
-        {% endfor %}
-    </ul>
-    <br>
-    <a href="/">Return to homepage</a>
-</body>
-</html>
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block content %}
+    <h1>{{ title }}</h1>
+    <hr>
+    <h2>My Favorite Movies:</h2>
+    {% for movie in movies %}
+        <h3>{{ loop.index }}. {{ movie }}</h3>
+    {% endfor %}
+{% endblock %}

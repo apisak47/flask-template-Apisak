@@ -15,7 +15,7 @@ def user_info():
                             mobile='095-719-7602',
                             age=21)
 
-@app.route('/favorite/sports')
+@app.route('/user/favorite_sports')
 def fav_sports():
     sports = ['Football', 'Esports', 'Volleyball']
     title = 'Favorite Sports Page'
@@ -23,7 +23,7 @@ def fav_sports():
                             title=title,
                             sports=sports)
 
-@app.route('/favorite/foods')
+@app.route('/user/favorite_foods')
 def fav_foods():
     foods = ['กระเพราหมูกรอบ', 'ก๋วยจั๊บ', 'ซูชิ',]
     title = 'Favorite Foods Page'
@@ -40,6 +40,7 @@ def fav_movies():
         "Jurassic World", 
         "Transformers"]
     title = 'Favorite Movies Page'
-    return render_template('favorite_movies.html', 
-                           title=title,
-                           movies=movies)
+    return render_template('movies.html', title=title, movies=movies)
+
+if __name__ == "__main__":
+    app.run(debug=True, host='0.0.0.0', port=5000)
